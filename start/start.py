@@ -685,6 +685,461 @@
 # 만약 아이디와 비밀번호가 모두 맞으면 "로그인성공" 출력
 # for i in range(4):
 #     print(1,end='')
-a=(1,2,3,4,5,)
-for i in range(0,-1):
-    print(i)
+
+
+#절차=커피,프림,설탕  
+# 객체=커피자판기    객체지향으로 프로그래밍을 하면 확장성 재활용성이 좋고 유지보수가 편하지만 절차지향으로 프로그래밍을 하는 것 보다는 속도가 느리다.
+
+# class calculator():
+#     numnerofCalcul=0    #속성  클래스 변수=한 클래스의 모든 인스턴스가 공유하는 값을 의미
+
+#     def __init__(self):      #생성자함수 constructor   
+#         self.result=0     #인스턴스 변수=인스턴스가 개인적으로 가지고 있는 속성
+#         calculator.numnerofCalcul+=1
+#     def getsum(self,value):   #매서드
+#         self.result+=value
+#         return self.result
+
+# cal1=calculator()    #인스턴스
+# print(cal1.getsum(3))
+# print(cal1.getsum(4))
+# print(cal1.getsum(5))
+# #인스턴스 변수=인스턴스가 개인적으로 가지고 있는 속성
+# cal2=calculator()
+# print(cal2.getsum(6))
+# print(cal2.getsum(7))
+# print(cal2.getsum(1))
+
+# print(cal1.numnerofCalcul)  #클래스 변수=한 클래스의 모든 인스턴스가 공유하는 값을 의미
+# print(cal2.numnerofCalcul)
+# print(calculator.numnerofCalcul)
+# #클래스.클래스변수 형식으로 변경해야함 ex)calculator.numnerofCalcul=4
+
+# calculator.numnerofCalcul=6
+# print(cal1.numnerofCalcul)
+# print(cal2.numnerofCalcul)
+# #가능-------
+
+# #불가능===
+# cal1.numnerofCalcul=10
+# print(cal2.numnerofCalcul)
+# #이러면 안됨!!(이것은 인스턴스 변수가 아님)
+
+
+# calculator.numnerofCalcul=20  #이러한 문제가 발생됨
+# print(cal1.numnerofCalcul)  #클래스 변수의 값을 바꿔도 이제cal1은 바뀌지 않음
+# print(cal2.numnerofCalcul)
+
+#결론 
+#클래스 변수:모든 인스턴스가 공유.
+#           인스턴스 전체가 사용해야 하는 값을 저장할 때 사용
+#인스턴스 변수:인스턴스별로 독립되어있음
+#             각 인스턴스가 값을 따로 저장해야 할 때 사용
+
+#[매소드]
+#3.매소드
+    #1.인스턴스 메소드
+    #2.클래스 메소드
+    #3.스태틱 메소드
+
+# class car:
+#     def __init__(self,name,price):
+#         self.name=name
+#         self.price=price
+
+#     def __add__(self,another):
+#         return self.price+another.price
+
+#     def __str__(self):
+#         return(f'{kia.name}의 가격은 {kia.price}입니다.')
+# kia=car('k8',300)
+# bmw=car('m5',500)
+
+# print(kia.price+bmw.price)
+# #__add__라는 매직매서드를 커스터마이징 해서 덧셈 연산을 지원하도록 하겠다.
+# print(kia+bmw) #커스터마이징할 것이다!  이거지금 출력하면 버그
+
+# print(kia)
+# del kia #인스턴스 삭제!
+# del bmw 
+
+
+#정적 매서드
+# class car:
+#     @staticmethod
+#     def add_price(one,another):
+#         print(one+another)
+
+# #정적 메소드에는 @staticmethod을 붙입니다
+# #그리고 self가 없다(self는 인스턴스 메서드 사용)
+# #add+price가 함수의 매개변수를 넣ㄴ는데 self를 사용하지 않는다
+
+# car.add_price(400,800)
+
+
+
+# class car:
+#     def __init__(self,name,price):
+#         self.name=name
+#         self.price=price
+#     def __add__(self,another):
+#         return self.price+another.price
+
+# kia=car('k8',300)
+# bmw=car('m5',500)
+# print(kia+bmw)
+
+# class car:
+#     def __init__(self,name,price):
+#         self.name=name
+#         self.price=price
+#     def __add__(self,another):
+#         return self.price+another.price
+#     def __str__(self):
+#         return (f'{self.name} 의 가격은 {self.price} 입니다.')
+
+# kia=car('k8',300)
+# bmw=car('m5',500)
+
+# print(bmw)
+
+# class plus_minus:
+#     def __init__(self,first,second): 
+#         self.first=first
+#         self.second=second       
+#     def plus(self):
+#         result=self.first+self.second
+#         return result
+#     def minus(self):
+#         result=self.first-self.second
+#         return result
+
+# a=plus_minus(3,6)
+# print(a.plus())
+# print(a.minus())
+
+# korea_nationality = Nationality("대한민국")
+
+# print(korea_nationality) # 나의 국적은 대한민국
+
+
+# def deco(func):
+#     def wrapping(value):
+#         # func(value)
+#         print(f'나의 국적은 {value}')
+#     return wrapping
+
+# @deco
+# def korea_nationality(Nationality):
+#     print(Nationality)
+
+# korea_nationality('대한민국')
+
+# print(korea_nationality) # 나의 국적은 대한민국
+
+# def deco(func):
+#     def wrapping(value):
+#         print('반짝'*5)
+#         func(value)
+#         print('샤방'*5)
+#     return wrapping
+
+# @deco
+# def call_name(name):
+#     print(name)
+
+
+
+# call_name('최민호')
+
+
+#add,substract,mutuply.divide메소드를 가진 calulator클래스를 생성하고 
+#아래의 계산결과를 출력
+#단 숫자는 0으로 나눌수없다 이경우 예외처리로 0으로 나눌수없습니다 출력
+# 1 + 2
+# 2 – 1
+# 3 * 4
+# 4 / 0
+
+# class calculator():
+#     numberOfCalcul=0
+#     def __init__(self):
+#         self.result=0
+
+#     def getsum(self,value):
+#         self.result+=value
+#         return self.result
+
+# cal1=calculator()
+
+# print(cal1.getsum(3))
+# print(cal1.getsum(4))
+# print(cal1.getsum(5))
+#대여시간 주행거리
+#fee(600, 50) #=> 91000
+#fee(600, 110) #=> 100350
+#A.대여는 10분단위
+#B 대여요금 10분당 1200
+#C 보험료 30분당 525(50분을 빌리면,1시간으로 계산)
+#D주행요금KM당 170원(주행요금은 100KM가 넘어가면 넘어간 부분에대하여 할인이 50%)
+
+
+# def fee(minute,distance):
+#     result = (minute//10) *1200 + (minute//30)*525
+
+#     if distance >100:
+#         result+=((170*100)+85*(distance-100))
+#     else:
+#         result+=170*distance
+#     return f'{result}'
+# print(fee(600,110))
+
+#초기화 메서드는 인자로 학생 이름으로 구성된 리스트를 받아서 인스턴스 변수에 할당
+#pick(n)메서드는 학생들 명단에서 인자n명 만큼 랜덤으로 추출하여 return
+#math_pair()메서드는 학생들 명단을 랜덤으로 20명씩 매칭해준다.
+#이때,학생들 명단수의 수가 홀수명이면 단 한팀만 3명으로 구성
+
+# ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
+
+# print(ch.pick(1))
+# print(ch.pick(1))
+# print(ch.pick(2))
+# print(ch.pick(3))
+# print(ch.pick(4))
+
+# print(ch.match_pair())
+
+
+#초기화매서드는 인자로 개의 이름과 견종을 받아서 인스턴스 변수에 할당한다
+#bark()매서드를 호출하면 개는 짖을수 있다.
+#클래스 변수는 태어난 개의 숫자와 현재 있는 개의 숫자를 기록하는 변수로 구성한다
+#개가 태어나면 num_of_dogs와 birth_of_dogs의 값이 각 1씩 증가
+#개가 죽으면 num_of_dogs의 값이 1감소
+#get_status()메서드를 호출하면 birth_of_dogs와num_of_dogs의 수를 출력가능
+
+# class dog_a:
+#     # def dog(self,num_of_dogs,birth_of_dogs):
+#     #     self.num_of_dogs=num_of_dogs
+#     #     self.birth_of_dogs=birth_of_dogs
+#     def __init__(self,num_of_dogs,birth_of_dogs):
+#         self.num_of_dogs=num_of_dogs
+#         self.birth_of_dogs=birth_of_dogs
+#     def get_status(self):
+#         return f'{self.num_of_dogs},{self.birth_of_dogs}'
+#     # def __del__(self):
+#     #     self.num_of_dogs=-1
+#     #cls랑 del쓰기!
+#     @staticmethod
+#     def bark():
+#         print('멍멍')
+# result=dog_a(1,1)
+# print(result.get_status())
+# dog_a.bark()
+# ---------------------  
+
+# def ko_hello(name):
+#     print(f'안녕하세요.{name}')
+
+# def en_hello(name):
+#     print(f'hello,{name}')
+
+# def add_emoji(name,func):
+#     func(name)
+#     print('^~^//')
+# def emoji_decorator(func):
+#     def wrapper(name):
+#         func(name)
+#         print('^~^//')
+
+#     return wrapper
+# emoji_decorator(ko_hello)('승태')
+
+
+# ko_hello('승태')
+# en_hello('tmdxo')
+# add_emoji('승태',ko_hello)
+
+# def emoji_decorator(func):
+#     def wrapper(name):
+#         func(name)
+#         print('^~^//')
+
+#     return wrapper
+# emoji_decorator(ko_hello)('승태')
+
+# #@emoji_decorator
+
+# class Myclass:
+#     def method(self):
+#         return 'instanec method'
+
+#     @classmethod
+#     def classmethod(cls):
+#         return'class method',cls
+#     @staticmethod
+#     def staticmethod():
+#         return'static method'
+
+# class plus_minus:
+#     def __init__(self,first,second):
+#         self.first=first     ###
+#         self.second=second   ###
+#     def plus(self):
+#         result=self.first+self.second
+#         return result
+#     def minus(self):
+#         result=self.first-self.second
+#         return result
+
+# class morefunction(plus_minus):
+#     def __init__(self,first,second,third):
+#         super().__init__(first,second)  #super는 부모클래스의 inint메소드를 그대로 가져온것
+#         self.third=third   #third만 추가
+#     def mul(self):
+#         result=self.first*self.second*self.third
+#         return result
+
+#     def plus(self):
+#         get_sum=self.first+self.second+self.third
+#         if get_sum>=100:
+#             print('버그')
+#         else:
+#             return print(get_sum)
+#             #이처럼 부모클래스의 plus매서드를 새롭게 다시정의하는것을
+#             #매서드 오버라이딩이라고 한다
+#     def parents_plus(self):
+#         ret=super().plus() #부모 매서드에서 plus메서드 호출시 super활용가능
+#         return ret
+# #부모클래스에서plus매서드를 자식클래스에서도 또 사용하고 싶다면
+# #이때 super()를 이용할수있다.
+
+
+# a=morefunction(1,1,99)
+# a.plus()
+# t=morefunction(500,400,200)
+# print(t.parents_plus())
+
+# print(morefunction.mro())
+
+# class Person:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.__age=age     #언더스코어 2개를 붙여
+    
+#     def getter(self):     #private한 속성값을 확인하고자함(getter함수가됨)
+#         return self.__age
+
+#     def setter(self,value):   #private한 속성값을 변경하고자 함(setter함수)
+#         self.__age=value
+
+# k=Person('kevin',39)
+# print(k.getter())
+# k.setter(29)
+# print(k.getter())
+
+# class Person:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.__age=age     
+
+#     @property                       #getter함수 위에@property라고 적어주고
+#     def age(self):
+#         return self.__age
+#     @age.setter                  #@매서드명.setter라고 적어줌
+#     def age(self,value):
+#         self.__age=value
+
+# k=Person('kevin',39)
+# print(k.age)
+# k.age=29
+# print(k.age)
+#참고로 @property 데코레이터 사용을 하면 메서드 호출시()를 생략해야 한다
+#관례상 setter getter함수명은 변수명을 따른다
+
+
+#정리 (상속 추상화 캡슐화 다향성)
+#상속:부모클래서,자식클래스 관계-- 속성과 메소드를 물려받아 사용(super통해서 부모의 요소 호출가능)
+#추상화:복잡한것은 숨기고,필요한 것 나타냄(공통적인 것은 부모클래스에 구현)
+#캡슐화:객체 일부 구현 내용에 대해 외부로 부터 직접적인 엑세스 차단 getter,setter
+#다향성:동일한 매서드가 클래스에 따라 다르게 행동할수있음, 매서드 오버라이딩
+
+# #  B=66   H=72
+# a,b=input().split()
+# c=int(ord(a))  #문자 숫자로
+# d=int(ord(b))  
+
+# for i in range(4):
+#     for j in range(c,d+1,1):
+#         print(j,end=' ')
+#     print()
+#---------------------------------
+# from collections import Counter
+
+# lst=['apple','mango','banana','apple','mango','banana','apple']
+
+# #counter는 리스트 안에 중복된 데이터가 가각 몇개씩 있는지 알려줌
+
+# print(Counter(lst))
+
+# ret= dict(Counter(lst))
+# print(ret)
+
+# st='an apple mango'
+# ret=dict(Counter(st))
+# print(ret)
+# ret=sorted(ret.items(),key=lambda x:x[1],reverse=True)
+# print(ret[0])
+
+# st='an apple mango'
+# #st요소를 세어, 최빈값n개를 반환한다.
+# ret=Counter(st).most_common(2)
+# print(ret)
+# #추가적으로 counter를 가지고 덧셈 뺄셈도 지원합니다.
+# a=Counter('apple')
+# b=Counter('mango')
+# print(a+b)
+# print(a-b)
+
+#데일리 실습 1월 31일
+#1.
+#A참가자 번호는1번부터 시작합니다
+#B 깍두기는 한명만존재 
+#C깍두기를 제외한 모든 참가자는 자신의 짝(자신과 같은수)이 존재합니다
+# from collections import Counter
+# participants =  [3, 7, 100, 21, 13, 6, 5, 7, 5, 6, 3, 13, 21]
+# print(Counter(participants))
+# ret=dict(Counter(participants))
+# print(ret)
+# ret=sorted(ret.items(),key=lambda x:x,)
+# print(ret)
+
+#2.
+# person1=Person('Mark',20)
+# person2=Person.get_age('Rohan',1992)
+
+
+
+class Person():
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    @classmethod
+    def get_age(cls,name,year):
+        cls.name=name
+        cls.age=2023-year
+        return cls
+    
+    def check_age(cls):
+        return cls.age>=19
+   
+    
+person1=Person('Mark',20)
+person2=Person.get_age('Rohan',1992)
+
+print(person1.name, person1.age) 
+print(person2.name, person2.age)
+print(person1.check_age())
+print(person2.check_age())
+
+
