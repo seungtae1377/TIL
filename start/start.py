@@ -1142,4 +1142,17 @@
 # print(person1.check_age())
 # print(person2.check_age())
 
+# print(ord('A'))
+# a,b=(input().split())
+# a,b=(input().split())
+# print(f"문자'{a}'의 아스키코드값은 {ord(a)}")
+# print(f"문자'{b}'의 아스키코드값은 {ord(b)}")
+
+
+#ord g= 103   a= 97
+# a=input()
+# b=ord(a)
+
+# for i in range(b,96,-1):
+#     print(chr(i),end='')
 
