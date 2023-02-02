@@ -1156,3 +1156,113 @@
 # for i in range(b,96,-1):
 #     print(chr(i),end='')
 
+
+# number=[7,10,22,4,3,17]
+#
+# #합 구하기
+# sum=0
+# for i in number:
+#     sum=+i
+# print(sum)
+#
+# #최대값 구하기
+# number=[7,10,22,4,3,17]
+# Max=number[0]
+# for num in number:
+#     if Max < num:
+#         Max = num
+# print(Max)
+#
+# #최소값 구하기
+# Min=(int)(21e8)
+# for num in number:
+#     if num<Min:
+#         Min=num
+# print(Min)
+
+# number=[7,10,64,4,3,17,22,64]
+# #넘버 리스트 안에 가장 큰 값이 몇개 존재 하나요?
+# #1.가장 큰값 찾기
+# #2.가장 큰 값이 몇개 있는지 알려주세요
+#
+# Max=0
+# cnt=0
+# for num in number:  #MAX 값찾기
+#     if Max < num:
+#         Max=num
+#
+#
+# for ber in number:  #가장 큰 값의 개수 찾기
+#     if ber == Max:
+#         cnt += 1
+# print(Max, cnt)
+
+#sort(정렬)
+
+# 선택정렬 selfction sort
+# a=[3,8,5,2,5,7,2,4]
+# for i in range(len(a)-1):
+#     for j in range(i+1,len(a)):
+#         if a[i]>a[j]:
+#             a[i],a[j]=a[j],a[i]
+# for i in range(len(a)):
+#     print(a[i],end='')
+# 삽입정렬 insert sort
+# a=[3,8,5,2,5,7,2,4]
+#
+# result=[]
+# for i in range(len(a)):
+#     result.append(a[i])
+#     for j in range(i,0,-1):
+#         if result[j-1]>result[j]:
+#             result[j],result[j-1]=result[j-1],result[j]
+#         else:
+#             break
+# print(result)
+# 버블정렬 bublble sort
+# a=[8,3,12,10,1]
+# for i in range(len(a)-1,0,-1): #4 3 2 1
+#     for j in range(0,i): #i가4일때 0123
+#         if a[j]>a[j+1]:
+#             a[j],a[j+1]=a[j+1],a[j]
+# print(a)
+
+# 계수정렬 count sort
+# a=[4,7,1,3,7,5,1]
+# bucket=[0]*10
+# #dat 등록
+# for i in range(n):
+#     bucket[a[i]]+=1
+# #누적합 구하기
+# for i in range(1,len(bucket)):
+#     bucket[i]+=bucket[i-1]
+# #값넣기
+# result=[0]*10
+# for i in range(n):
+#     index=a[i]
+#     result[bucket[index]-1]=a[i]
+#     bucket[index]-=1
+# for i in range(n):
+#     print(result[i],end='')
+
+
+
+#정수 n입력받고
+#n개의 정수를 리스트에 입력받은 후
+#입력받은 정수가 a배열에 각각 몇개씩 있는지 출력해주세요
+#b라는 리스트에 숫자 4개 입력받아 주세요
+# a=[3,8,5,2,5,7,2,4]
+# b=[1,2,3,4]
+#
+# for i in a:
+#     count = 0
+#     for j in b:
+#         if i==j:
+#             count=+1
+#     print(f'{i}:{count}개')
+
+
+
+
+
+
