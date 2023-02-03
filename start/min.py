@@ -83,7 +83,8 @@
 # 1234
 
 # 6.아래에 정답을 입력하시오
-
+# lst=((input()))
+# print(list(lst))
 
 
 # 7.2차원 (N*N) 공백없는 한자리 숫자들을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
@@ -98,6 +99,10 @@
 # 1000
 
 # 7.아래에 정답을 입력하시오
+# N=input()
+# lst=list(input().split())
+# print(N)
+# print(lst)
 
 
 
@@ -192,9 +197,54 @@
 #         print(j)   
 #     print()
 
-a,b,c=(input().split())
-# print(c)
-for i in range(int(b)):
-    for j in (a):
-        print(c*j)
-        
+# a,b,c=(input().split())
+# # print(c)
+# for i in range(int(b)):
+#     for j in range(int(a)):
+#         print(c*j)
+
+
+# lst =[]
+# for _ in range(3):
+#     lst.append(input())
+
+# a=input()
+# b=input()
+# c=input()
+# d=a,b,c
+# result=0
+# for i in (d):
+#     if 'M' in i:
+#         result+=1
+
+# if result>0:
+#     print('M이 존재합니다')
+# else:
+#     print('M이 존재하지 않습니다')
+#------------------------------------------
+# ans = cnt =0
+# for i in range(n):
+#     if lst[i]==0:
+#         cnt=0
+#     else:
+#         cnt+=1
+#         if ans<cnt:
+#             ans=cnt
+# print(f'#{test_case},ans')
+
+
+a,b=(input().split())
+c=a,b
+
+lst=[['A','7','9','T','K','Q'],
+['M','I','N','C','O','D']]
+
+result=''
+cnt=''
+for i in lst:
+    if a in i:continue
+    result+=a
+else:
+    cnt+=a
+print(f'{result} : 존재')
+print(f'{cnt} : 없음')

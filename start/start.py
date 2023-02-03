@@ -1266,3 +1266,19 @@
 
 
 
+# lst=ord(input())
+# max=0
+# min=0
+# for i in lst:
+#     if i>max:
+#         max=i
+# print(i)
+
+lst=input()
+max=0
+min=0
+for i in lst:
+    
+    if (ord(i))>max:
+        max=i
+print(max)
