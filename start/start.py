@@ -1274,11 +1274,22 @@
 #         max=i
 # print(i)
 
-lst=input()
-max=0
-min=0
-for i in lst:
-    
-    if (ord(i))>max:
-        max=i
-print(max)
+
+
+a,b,c=map(int,input().split())
+
+
+
+if a>=b and a>=c:
+    print(f'MAX={a}')
+elif b>=a and b>=c:
+    print(print(f'MAX={b}'))
+else:
+    print(f'MAX={c}')
+
+if a<=b and a<=c:
+    print(f'MIN={a}')
+elif b<=a and b<=c:
+    print(print(f'MIN={b}'))
+else:
+    print(f'MIN={c}')
