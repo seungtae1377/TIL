@@ -1276,20 +1276,20 @@
 
 
 
-a,b,c=map(int,input().split())
+# a,b,c=map(int,input().split())
 
 
 
-if a>=b and a>=c:
-    print(f'MAX={a}')
-elif b>=a and b>=c:
-    print(print(f'MAX={b}'))
-else:
-    print(f'MAX={c}')
+# if a>=b and a>=c:
+#     print(f'MAX={a}')
+# elif b>=a and b>=c:
+#     print(print(f'MAX={b}'))
+# else:
+#     print(f'MAX={c}')
 
-if a<=b and a<=c:
-    print(f'MIN={a}')
-elif b<=a and b<=c:
-    print(print(f'MIN={b}'))
-else:
-    print(f'MIN={c}')
+# if a<=b and a<=c:
+#     print(f'MIN={a}')
+# elif b<=a and b<=c:
+#     print(print(f'MIN={b}'))
+# else:
+#     print(f'MIN={c}')

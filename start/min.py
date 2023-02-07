@@ -409,22 +409,187 @@
 #         print(a-1,end=' ')     # 3 4 5   #6 7 8
 #     print()
 
-def BBQ():
-    if 0<a and a<5:
-        print('초기값')
-    elif 6<a and a<10:
-        print('중간값')
-    else:
-        print('알수없는값')
+# def BBQ():
+#     if 0<a and a<5:
+#         print('초기값')
+#     elif 6<a and a<10:
+#         print('중간값')
+#     else:
+#         print('알수없는값')
     
 
-    a=int(input())
-    if a== 3 or 5 or 7:
-        for i in range(1,11):
-            print(i,end='')
-    elif a== 0 or 8:
-        for j in range(10,0,-1):
-            print(j,end='')
-    else:
-        BBQ()
-    
+# a=int(input())
+# if a== 3 or 5 or 7:
+#     for i in range(1,11):
+#         print(i,end='')
+# elif a== 0 or 8:
+#     for j in range(10,0,-1):
+#         print(j,end='')
+# else:
+#     BBQ()
+# n=int(input())
+# arr=[list(map(int,input())) for _ in range(n)]
+# for i in range(n):
+#     print=(arr[i])
+
+
+# #리스트에 n개의 정수를 입력
+# lst=list(map(int,input()))
+# #타겟에 정수 1개 입력
+# target=int(input())
+# #타겟이 리스트 안에 있는지 존재 여부 출력
+# for i in lst:
+#     if target in i:
+#         print('없음')
+#     else:
+#         print('없음')
+
+
+
+#===================
+
+
+
+# 베터리가 몇% 충정 되어 있는지 O(n)보다 빠르게 검색해서 알려주세요
+
+# bettery='######____'
+
+# def parametric_search(st,ed):
+#     Max=-1
+#     while 1:
+#         mid=(st+ed)//2
+#         if bettery[mid]=='_':
+#             ed=mid-1
+#         elif bettery[mid]=='#':
+#             Max=mid
+#             st=mid+1
+#         if st>ed:
+#             break
+#     return Max+1
+
+# answer=parametric_search(0,9)
+# print(answer*10)
+
+#=======================================
+# 워드 작업 중 정전으로 인하여 컴퓨터가 강제 종료 되었습니다.
+# 다시 전기가 들어와 컴퓨터를 켰더니 다행이도 자동복구가 실행 되었습니다.
+# 우리는 자동복구가 되었을떄 커서의 위치가 어디인지를 알려줘야 합니다.
+# 커서의 위치를 알려주는 프로그램을 완성해 주세요.
+# 시간복잡도 O(n^2) 보다 빨라야 합니다.
+
+# 6*12 size 리스트 입니다.
+
+# curser=[ 
+#  '##########',
+#  '##########',
+#  '###_______',
+#  '__________',
+#  '__________',
+#  '__________',
+# ]
+
+# st=0
+# ed=len(curser)
+# mid=(st+ed)//2
+
+# if curser[mid] not in '#':
+#     ed=mid-1
+# if curser[mid] in '#':
+#======20230207
+
+# a=[['B','D','5','Q','A'],['Q','E','R','E','F']]
+# rlt=input()
+
+# if rlt.islower():
+#     for i in a[0]:
+#         print(i,end='')
+# if rlt.isupper():
+#     for i in a[1]:
+#         print(i,end='')
+# if rlt.isdigit():
+#     print("HGFEDCBA")
+
+
+# arr=[[4,3,1,1],
+# [3,1,2,1],
+# [0,0,1,2]]
+
+# a=int(input())
+# sum=0
+# for i in arr:
+#     sum+=(i.count(a))
+# print(f'{sum}개 존재합니다')
+
+
+
+# a=list(map(int,input().split()))
+# b=(a.index(7))     #인덱스 자리
+#      #역배열
+# c=(a[-1:b-1:-1])   
+# for i in c:
+#     print(i,end=' ')
+
+# num=int(input())
+
+
+# a=list(map(int,input().split()))
+# Max=0
+# Min=a[0]
+# for i in a:
+#     if i>Max:
+#         Max=i
+# for j in a:
+#     if j<Min:
+#         Min=j
+# print(f'{Max-Min}')
+
+# a=[4,3,6,1,3,1,5,3]
+# b=int(input())
+# c=a.count(b)
+# print(f'숫자{b}개수는{c}개')
+
+# a=[['A','B','C','D','E'],
+# ['E','A','B','A','B'],
+# ['A','C','D','E','R']]
+
+# b=input()
+# print(b)
+# c=a.count(b)
+# print(c)
+
+# a=['A','F','G','A','B','C']
+
+# b,c=input().split()
+# count=0
+# for i in a:
+#     # if i in b or c:
+#     #     count+=1
+#     if i in b:
+#         count+=1
+#         if b =='A':
+#             count-=0.5
+#     if i in c:
+#         count+=1
+#         if c =='A':
+#             count-=0.5
+   
+# if count==2:
+#     print(f'와{int(count)}개')
+# elif count==1:
+#     print(f'오{int(count)}개')
+# elif count==0:
+#     print(f'우{int(count)}개')
+
+# a=[3,4,2,5,7,9]
+# b,c=map(int,input().split())
+# a[b],a[c]=a[c],a[b]
+# for i in a:
+#     print(i,end=' ')
+
+print(ord('I'))
+
+# A=65
+# for i in range(3):
+#     for j in range(3):
+#         print(j,end='')
+#     print()
