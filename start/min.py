@@ -585,11 +585,79 @@
 # a[b],a[c]=a[c],a[b]
 # for i in a:
 #     print(i,end=' ')
-
-print(ord('I'))
-
-# A=65
+#------------------20230208-----------------
+# a=[[0]*4 for _ in range(3)]
+# b=int(input())
 # for i in range(3):
-#     for j in range(3):
-#         print(j,end='')
-#     print()
+#     for j in range(4):
+#         b+=1
+#         a[i][j]=b
+# for rlt in a:
+#     print(rlt)
+
+# arr=[3,4,5,1,6,9]
+#
+# def abc(level,sum):
+#     print(sum,end=' ')
+#     if level==5:
+#         return
+#     abc(level+1,sum+arr[level+1])
+#
+# abc(0,arr[0])
+# a,b=map(int,input().split())
+# lst=list(map(int,input().split()))
+
+# Max=-21e8
+# Min=21e8
+# # for i in range(a-b+1):
+# #     if lst[i:b+i]>Max:
+# #         Max=lst[i:b+i]
+# # print(Max-Min)  
+
+
+# for i in range(a-b+1):
+#     sum=0
+#     for j in lst[i:b+i]:
+#         sum+=j
+
+#     if sum>Max:
+#         Max=sum
+#     if sum<Min:
+#         Min=sum
+
+# print(Max-Min)
+    
+
+#------
+
+
+
+
+
+# T=int(input())
+# for t in range(T):   
+#     a,b=map(int,input().split())
+#     lst=list(map(int,input().split()))
+#     Max=-21e8
+#     Min=21e8
+
+#     for i in range(a-b+1):
+#         sum=0
+#         for j in lst[i:b+i]:
+#             sum+=j
+#         if sum>Max:
+#             Max=sum
+#         if sum<Min:
+#             Min=sum
+#     print(f'#{t} {Max-Min}')
+
+a=int(input())
+card=list(map(int,input()))
+df=[]
+for i in card:
+    if i==card:
+        df.append(i)
+    
+print(df)
+    
+    
