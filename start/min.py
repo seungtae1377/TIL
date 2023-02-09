@@ -651,13 +651,83 @@
 #             Min=sum
 #     print(f'#{t} {Max-Min}')
 
-a=int(input())
-card=list(map(int,input()))
-df=[]
-for i in card:
-    if i==card:
-        df.append(i)
+# a=int(input())
+# card=list(map(int,input()))
+# df=[]
+# for i in card:
+#     if i
     
-print(df)
+# ===========================20230209
+#
+# # 5
+# # 49679    9  2
+# # 5
+# # 08271   8 1
+# # 10 
+# # 7797946543    7  3 
+# N=int(input())   #카드개수
+# card=list(map(int,input())) #카드
+# num=[0]*10   #빈배열 0~9 
+
+# for i in card:          #카드숫자를i에 넣어줌
+#     num[i]+=1              #넘에+1을 해준다 카드위치찾기위해서
+
+# Max=0            #최대값    max가 4가되어버림
+# Maxnum=0          #최대값숫자
+# for j in range(10):           
+#     if num[j]>=Max:        #배열의 최대값구해하기
+#         Max=num[j]            #2개 000
+#         Maxnum=(j)
+# print(Maxnum,Max)
+
+
+# # print(f'{}{Max}')    
+
+# T = int(input())
+# # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+# # for test_case in range(1, T + 1):
+# #     n=int(input())          #가로길이     9
+# #     box=list(map(int,input().split()))
+# #     max=0
+# #     for i in range(n):#012345678
+# #         sum=0
+# #         for j in range(n):#012345678
+# #             if box[i]>=box[j+i]:
+# #                 #00 01 02 03 04 05 06 07 08
+# #                 #11 12 13 14 15 16 17 18
+
+# K=한번충전으로 최대 이동 정류장수
+# M=충전기가 설치된 정류장 번호
+# N=목적지    
+#input    
+# K N  M
+# 3 10 5    # 
+# 1 3 5 7 9        3
+
+# 3 10 5
+# 1 3 7 8 9        0  
+
+# 5 20 5
+# 4 7 9 14 17      4
+#A= 한번충전으로 최대 이동 정류장수
+#B= 목적지
+
+#C= 충전기 개수
+a,b,c=map(int,input().split())  #3 10 5
+char=list(map(int,input().split()))  
+#(1 3 5 7 9)충전기 설치 정류장번호
+
+line=[0]*(b+1)    #목적지 개수만큼 리스트만듬
+for i in char:
+    line[i]+=a      #충전기 설치된 정류장번호에 최대이동 수를 넣음
+
+for j in range(0,(b+1),a):#출발지점부터 목적지 b까지 최대이동수 a를넣음
+    if line[j] in a:
+        pass
+    else:
+        print(0)
+        
     
-    
+#     print(j)
+# print(line)
+

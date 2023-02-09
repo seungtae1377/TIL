@@ -101,7 +101,65 @@ sys.stdin=open('input.txt', 'r')
 #             Min=sum
 #     print(f'#{t+1} {Max-Min}')
 
-a=int(input())
-card=list(map(int,input()))
-print(a)
-print(card)
+# N=int(input())   #카드개수
+# card=list(map(int,input())) #카드
+# num=[0]*10   #빈배열 0~9
+
+# for i in card:          #카드숫자를i에 넣어줌
+#     num[i]+=1              #넘에+1을 해준다 카드위치찾기위해서
+
+# Max=0            #최대값
+# Maxnum=0          #최대값숫자
+# for j in range(10):
+#     if num[j]>Max:        #배열의 최대값구해하기
+#         Max=j
+#         Maxnum=num[j]
+
+# print(f'{Max} {Maxnum}')
+
+
+
+
+#=====================20230209=====
+# T = int(input())
+# # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+# for test_case in range(1, T + 1):
+#     N=int(input())   #카드개수
+#     card=list(map(int,input())) #카드
+#     num=[0]*10   #빈배열 0~9 
+
+#     for i in card:          #카드숫자를i에 넣어줌
+#         num[i]+=1              #넘에+1을 해준다 카드위치찾기위해서
+
+#     Max=0            #최대값    max가 4가되어버림
+#     Maxnum=0          #최대값숫자
+#     for j in range(10):           
+#         if num[j]>=Max:        #배열의 최대값구해하기
+#             Max=num[j]            #2개 
+#             Maxnum=(j)
+
+
+#     print(f'#{test_case} {Maxnum} {Max}')    
+
+
+#=====================================
+T = int(input())
+# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+for test_case in range(1, T + 1):
+    n=int(input())          #가로길이     9
+    box=list(map(int,input().split()))#상자 7 4 2 0 0 6 0 7 0
+
+    maxrlt=0       #길이 구하기
+    for j in range(n):    #012345678
+        rlt=0               #비교한거 길이 초기화
+        if j==8:
+            break
+        
+        for i in range(n-1): #012345678
+            if box[j]>=box[i+1]:    #j번 박스가 i+1번박스보다같거나 크면
+                rlt+=1     #더하기1 해서 거리 구하기
+                rlt>maxrlt
+                maxrlt=rlt
+            
+        
+print(f'#{test_case} {maxrlt}') 
