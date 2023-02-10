@@ -18,8 +18,9 @@ print(st)
 
 # 2.아래에 정답을 입력하시오
 n=int(input())
-a,b,c=map(int,input())
-
+a,b,c=map(int,input().split())
+print(n)
+print(a,b,c)
 # 3.실수형 변수 입력 받고 출력해서 값이 잘 들어갔지 확인해보기
 # F = 3.14
 # A, B, C = 1.2, 2.3, 3.4
@@ -30,7 +31,7 @@ a,b,c=map(int,input())
 
 # 3.아래에 정답을 입력하시오
 n=float(input())
-a,b,c=map(float(input()))
+a,b,c=map(float,input())
 print(n)
 print(a,b,c)
 
@@ -41,8 +42,9 @@ print(a,b,c)
 # one two three
 
 # 4.아래에 정답을 입력하시오
-lst=list(input().split())
+lst= list(input().split())
 print(lst)
+
 
 # 5.한 줄에 있는 공백으로 구분된 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # (map 함수를 이용하여 문자열을 숫자로 바꾼 후 리스트로 변환)
@@ -54,6 +56,7 @@ print(lst)
 # 5.아래에 정답을 입력하시오
 lst=list(map(int,input().split()))
 print(lst)
+
 
 # 6.한 줄에 있는 공백없는 한자리 숫자들을 각각 숫자로 리스트에 저장하고 출력해서 값이 잘 들어갔지 확인해보기
 # lst = [1, 2, 3, 4]
@@ -77,9 +80,9 @@ print(lst)
 
 # 7.아래에 정답을 입력하시오
 n=int(input())
-arr=[list(map(int,input())) for _ in range(n)]
+arr=[list(map(int,input()))for _ in range(n)]
 for i in range(n):
-    print(*arr[i])
+    print(arr[i])
 # 8.2차원 (N*N) 정수값을 2차원 arr에 저장하고 출력해서 값이 잘 들어갔지 확인해보기 (N값과 arr값)
 # N=4
 # arr=[[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]

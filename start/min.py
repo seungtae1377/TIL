@@ -713,21 +713,64 @@
 #B= 목적지
 
 #C= 충전기 개수
-a,b,c=map(int,input().split())  #3 10 5
-char=list(map(int,input().split()))  
-#(1 3 5 7 9)충전기 설치 정류장번호
 
-line=[0]*(b+1)    #목적지 개수만큼 리스트만듬
-for i in char:
-    line[i]+=a      #충전기 설치된 정류장번호에 최대이동 수를 넣음
+# =======전기버스===================
+# a,b,c=map(int,input().split())  #3 10 5
+# char=list(map(int,input().split()))  
+# #(1 3 5 7 9)충전기 설치 정류장번호
 
-for j in range(0,(b+1),a):#출발지점부터 목적지 b까지 최대이동수 a를넣음
-    if line[j] in a:
-        pass
-    else:
-        print(0)
+# line=[0]*(b+1)    #목적지 개수만큼 리스트만듬
+# for i in char:
+#     line[i]+=a      #충전기 설치된 정류장번호에 최대이동 수를 넣음
+
+# for j in range(0,(b+1),a):#출발지점부터 목적지 b까지 최대이동수 a를넣음
+#     if line[j] in a:
+#         pass
+#     else:
+#         print(0)
         
     
-#     print(j)
-# print(line)
+# #     print(j)
+# # print(line)
+#=======================================20230210=====================
+#버블정렬
+# arr=[1,5,3,4,9,7,6,2]  #8
+# n=len(arr)   
+# for i in range(n-1,0,-1):  #7부터 1까지 -1씩 비교
+#     #(7654321)
+#     for j in range(i):
+#         if arr[j]>arr[j+1]:
+#             arr[j],arr[j+1]=arr[j+1],arr[j]
+#------------------------------swea 색종이
+# N=int(input())
+# R1=map(int,input().split())
+# R2=map(int,input().split())
 
+
+# a=[[0]*10 for _ in range(10)]   #총범위 10x10
+# N=int(input()) #칠할 영역 개수
+
+# n,m=map(int,input().split())
+
+# a=list(map(int,input().split()))  #1233
+
+# b=[[0]*10 for _ in range(10)]
+
+# for i in range(a[0],a[2]+1): #1234
+#         for j in range(a[1],a[4]+1):  #234
+#             b.append([i,j])
+# print(b)
+
+#--------------------------------minco
+a,b=map(int,input().split())
+c,d=map(int,input().split())
+
+arr=[[0]*3 for _ in range(3)]
+value='A'
+for i in range(3):
+    for j in range(3):
+        arr[i][j]=value
+        value=chr(ord(value)+1)
+
+arr[a][b],arr[c][d]=arr[c][d],arr[a][b]
+print(*arr)
