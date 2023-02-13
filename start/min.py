@@ -762,15 +762,118 @@
 # print(b)
 
 #--------------------------------minco
-a,b=map(int,input().split())
-c,d=map(int,input().split())
+# a,b=map(int,input().split())
+# c,d=map(int,input().split())
 
-arr=[[0]*3 for _ in range(3)]
-value='A'
-for i in range(3):
-    for j in range(3):
-        arr[i][j]=value
-        value=chr(ord(value)+1)
+# arr=[[0]*3 for _ in range(3)]
+# value='A'
+# for i in range(3):
+#     for j in range(3):
+#         arr[i][j]=value
+#         value=chr(ord(value)+1)
 
-arr[a][b],arr[c][d]=arr[c][d],arr[a][b]
-print(*arr)
+# arr[a][b],arr[c][d]=arr[c][d],arr[a][b]\
+
+
+# T=int(input())
+# for test_case in range(1,T+1):
+#     n,m=map(int,input().split())  #5 1
+#     lst=[[0]*n for _ in range(n)]   #빈배열 n곱하기n개만듬
+#     nlst=[list(map(int,input().split()))for _ in range(m)]
+
+#     for k in range(m):
+#         for i in range(nlst[k][0],nlst[k][2]+1):
+#             for j in range(nlst[k][1],nlst[k][3]+1):
+#                 lst[i][j]+=1
+#     rlt = 0
+#     for x in lst:
+#         for y in x:
+#             if y>0:
+#                 rlt+=1
+#             if y>1:
+#                 rlt+=2
+
+
+#     print(f'#{test_case} {rlt}')
+#========================================20230213==============================
+#중복순열
+	
+# n=3
+# dice=[1,2,3,4]
+# path=['']*n     
+# def abc(level):
+#      if level==n:               #level 3일때 돌아가는거
+#           for i in range(n):
+#                print(path[i],end=' ')
+#           print()
+#           return
+#      for i in range(4):
+#         if i==1: continue
+#         path[level]=dice[i]
+       
+#         abc(level+1)
+#          #path[level] =' '
+        
+
+# abc(0)
+
+
+
+# n=3
+# card=['A','B','C','D']
+# path=['']*n
+# def abc(level,start):
+#     # if level>0 and path[level-1]=='B': return
+#     if level==n:
+#         for i in range(n):
+#             print(path[i],end=' ')
+#         print()
+#         return
+#     for i in range(start,4):
+#         path[level]=card[i]
+#         # if path[level-1]==path[level]: return
+#
+#         abc(level+1,i+1)
+#
+# abc(0,0)
+
+
+n=3  #카드 3묶음
+card=['A','B','C','D'] #카드
+path=['']*n  #?
+# def abc(level):
+#     if level==n:  #레벨이 3이되면
+#         for i in range(n): #3번반복
+#             print(path[i],end=' ')
+#         print()
+#         return #..
+#     for i in range(4):
+#         path[level]=card[i]
+#         abc(level+1)
+#나는솔로
+       #A B C D E F
+arr = [[0,1,1,0,0,0],
+       [0,0,0,1,1,0],
+       [0,0,0,0,0,1],
+       [0,0,0,0,0,0],
+       [0,0,0,0,0,0]]
+a=input()  #문자 하나 입력받기
+rlt=[]
+for i in range(5):
+    for j in range(6):
+        if arr[i][j]==1:
+            rlt+=arr[j]
+        else:
+
+#arr 을 for문돌리면서 1을찾기
+#1의 좌표를 찾고 그좌표에서 같은 i값에 있는 것을 찾기
+#찾은걸 출력#같은i값에서찾은 j위치가 0이면a 1이면b 2이면c....
+#만약 같은 i값에 없으면 형제없음 출력
+
+# 문자를 하나 입력받아 주세요
+#그리고 입력받은 문자의 형제노드를 출력해주세요
+#예
+#A입력시 형제없음 출력됨
+#B입력시 C출력됨
+#E입력시 D출력됨
+#F입력시 형제없음이 출력됩니다
