@@ -838,32 +838,115 @@
 # abc(0,0)
 
 
-n=3  #카드 3묶음
-card=['A','B','C','D'] #카드
-path=['']*n  #?
+# n=3  #카드 3묶음
+# card=['A','B','C','D'] #카드
+# path=['']*n  #?
+# # def abc(level):
+# #     if level==n:  #레벨이 3이되면
+# #         for i in range(n): #3번반복
+# #             print(path[i],end=' ')
+# #         print()
+# #         return #..
+# #     for i in range(4):
+# #         path[level]=card[i]
+# #         abc(level+1)
+# #나는솔로
+#        #A B C D E F
+# arr = [[0,1,1,0,0,0],
+#        [0,0,0,1,1,0],
+#        [0,0,0,0,0,1],
+#        [0,0,0,0,0,0],
+#        [0,0,0,0,0,0]]
+# a=input()  #문자 하나 입력받기
+# rlt=[]
+# for i in range(5):
+#     for j in range(6):
+#         if arr[i][j]==1:
+#             rlt+=arr[j]
+#         else:
+
+# #arr 을 for문돌리면서 1을찾기
+# #1의 좌표를 찾고 그좌표에서 같은 i값에 있는 것을 찾기
+# #찾은걸 출력#같은i값에서찾은 j위치가 0이면a 1이면b 2이면c....
+# #만약 같은 i값에 없으면 형제없음 출력
+
+# # 문자를 하나 입력받아 주세요
+# #그리고 입력받은 문자의 형제노드를 출력해주세요
+# #예
+# #A입력시 형제없음 출력됨
+# #B입력시 C출력됨
+# #E입력시 D출력됨
+# #F입력시 형제없음이 출력됩니다
+
+#========================================20230213==============================
+#중복순열
+	
+# n=3
+# dice=[1,2,3,4]
+# path=['']*n     
 # def abc(level):
-#     if level==n:  #레벨이 3이되면
-#         for i in range(n): #3번반복
+#      if level==n:               #level 3일때 돌아가는거
+#           for i in range(n):
+#                print(path[i],end=' ')
+#           print()
+#           return
+#      for i in range(4):
+#         if i==1: continue
+#         path[level]=dice[i]
+       
+#         abc(level+1)
+#          #path[level] =' '
+        
+
+# abc(0)
+
+
+
+# n=3
+# card=['A','B','C','D']
+# path=['']*n
+# def abc(level,start):
+#     # if level>0 and path[level-1]=='B': return
+#     if level==n:
+#         for i in range(n):
 #             print(path[i],end=' ')
 #         print()
-#         return #..
-#     for i in range(4):
+#         return
+#     for i in range(start,4):
 #         path[level]=card[i]
-#         abc(level+1)
-#나는솔로
+#         # if path[level-1]==path[level]: return
+#
+#         abc(level+1,i+1)
+#
+# abc(0,0)
+
+
+# n=3  #카드 3묶음
+# card=['A','B','C','D'] #카드
+# path=['']*n  #?
+# # def abc(level):
+# #     if level==n:  #레벨이 3이되면
+# #         for i in range(n): #3번반복
+# #             print(path[i],end=' ')
+# #         print()
+# #         return #..
+# #     for i in range(4):
+# #         path[level]=card[i]
+# #         abc(level+1)
+# #나는솔로
        #A B C D E F
-arr = [[0,1,1,0,0,0],
-       [0,0,0,1,1,0],
-       [0,0,0,0,0,1],
-       [0,0,0,0,0,0],
-       [0,0,0,0,0,0]]
-a=input()  #문자 하나 입력받기
-rlt=[]
-for i in range(5):
-    for j in range(6):
-        if arr[i][j]==1:
-            rlt+=arr[j]
-        else:
+# arr = [[0,1,1,0,0,0],
+#        [0,0,0,1,1,0],
+#        [0,0,0,0,0,1],
+#        [0,0,0,0,0,0],
+#        [0,0,0,0,0,0]]
+# a=input()  #문자 하나 입력받기
+# rlt=[]
+# for i in range(5):
+#     for j in range(6):
+#         if arr[i][j]==1:
+#             rlt+=arr[j]
+#         else:
 
 #arr 을 for문돌리면서 1을찾기
 #1의 좌표를 찾고 그좌표에서 같은 i값에 있는 것을 찾기
@@ -877,3 +960,349 @@ for i in range(5):
 #B입력시 C출력됨
 #E입력시 D출력됨
 #F입력시 형제없음이 출력됩니다
+
+#==========================20230214
+# name=['K','F','C','D','M','G','A']
+# arr=[[0,1,1,1,0,0,0],
+#     [0,0,0,0,1,1,0],
+#     [0,0,0,0,0,0,1],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0]]
+# path=[]
+# def abc(now):
+#     global path
+#     path.append(name[now])
+#     for i in range(len(name)):
+#         if arr[now][i]==1:
+#             abc(i)
+# abc(0)
+# print(*path)
+
+
+#a->d까지 가는방법 경로탐색
+# name=list(input().split())   # B A C D
+# arr=[
+#     [0,0,1,1],
+#     [1,0,1,0],
+#     [1,0,0,1],
+#     [0,0,0,0]]
+# used=[0]*4
+# answer=0
+# path=[]
+
+# def dfs(now):
+#     global answer
+#     path.append(name[now])
+#     if now==3:
+#         answer+=1
+#         print(*path)
+#         return
+
+#     for i in range(4):
+#         if arr[now][i]==1 and used[i]==0:
+#             used[i]=1
+#             dfs(i)
+#             used[i]=0
+#             path.pop()
+
+# used[1]=1
+# dfs(1)
+# print(answer)
+#==========================================
+# name=['K','F','C','D','M','G','A']
+
+# arr=[
+#     [0,1,1,1,0,0,0],
+#     [0,0,0,0,1,1,0],
+#     [0,0,0,0,0,0,1],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+# ]
+# path=[]
+# def dfs(now):
+#     global path
+#     path.append(name[now])    #NOW=0 1 4 5  PATH K F M G
+#     for i in range(len(name)):
+#         if arr[now][i]==1:
+#             dfs(i)
+# dfs(0)
+# print(*path)
+#===========================================
+# TREE 모양이 아닌 그래프 dfs 1번씩 탐색 순서 출력하기
+# name=list(input().split())  # B A C D
+# arr=[[0,0,1,1],
+#      [1,0,0,0],
+#      [0,1,0,1],
+#      [0,0,0,0]]
+
+# used=[0]*4
+# answer=[]
+
+# def dfs(now):
+#     global answer
+#     answer.append(name[now])
+#     for i in range(4):
+#         if arr[now][i]==1:  # 인접행렬 탐색하다가 1체크가 되어 있으면
+#             if used[i]==0:  # 한번도 방문한 적이 없으면
+#                 used[i]=1   # 방문체크 해주고
+#                 dfs(i)      # 들어가기
+
+# used[0]=1   # 탐색 시작 인덱스에 1 체크하고
+# dfs(0)      # dfs 탐색
+# print(*answer)
+#=======================
+# name=list(input().split())  # B A C D
+# arr=[[0,0,3,14],
+#      [7,0,19,0],
+#      [3,0,0,1],
+#      [0,0,0,0]]
+# used=[0]*4  # 방문 횟수 체크할라고
+# Min=9999999999999999999
+
+# #A에서 D까지 가는데 최소비용구하기
+# def dfs(now,sum):
+#     global Min
+#     if now==3:
+#         if sum<Min:
+#             Min=sum        #최소sum구하기
+#         return
+
+#     for i in range(4):
+#         if arr[now][i]>0:#이동할 수 있는 곳이라면
+#             if used[i]==0:# 한번도 방문한 적이 없는 곳이라면
+#                 used[i]=1
+#                 dfs(i,sum+arr[now][i])   ###잘모르겠음
+#                 used[i]=0
+# used[1]=1            
+# dfs(1,0)   #시작인덱스1//sum=0
+
+# print(Min)
+#=====================================
+# name=list(input().split())  # A B C D E
+# arr=[[0,4,0,0,0],
+#     [0,0,1,2,9],
+#     [5,0,0,7,0],
+#     [0,0,0,0,1],
+#     [0,0,0,0,0]]
+# st=input()
+# used=[0]*5
+# cnt=0
+
+# def dfs(now):
+#     global cnt
+#     # 도착점 E에 도착할때 마다 cnt+=1 해주기
+#     if name[now]=='E': 
+#         cnt+=1
+#     # 인접행렬 탐색하는데...
+#     for i in range(5):
+#         # 이동 가능하며 한번도 방문한 적이 없다면
+#         if arr[now][i]==1 and used[i]==0: 
+#             # 방문체크 해주고
+#             used[i]=1
+#             dfs(i)
+#             # 방문체크 해제 하기
+#             used[i]=0
+            
+
+# # 입력받은 시작점의 인덱스 찾기
+# st_index=0
+# for i in range(5):
+#     if name[i]==st:
+#         st_index=i
+#         break
+# # 방문배열에 1 체크 후 dfs 시작하기
+# used[st_index]=1
+# dfs(st_index)
+# print(cnt)
+#=========================================================
+# name=list(input().split())  # A B C D E
+# arr=[[0,4,0,0,0],
+#     [0,0,1,2,9],
+#     [5,0,0,7,0],
+#     [0,0,0,0,1],
+#     [0,0,0,0,0]]
+# used=[0]*5
+# min=999999
+
+# def abc(now,sum):
+#     global Min
+#     if now==4:
+#         if sum<min:
+#             min=sum
+#         return
+    
+#     for i in range(5):
+#         if arr[now][i]>0:
+#             if used[i]==0:
+#                 used[i]=1
+#                 abc(i,sum+arr[now][i])
+#                 used[i]=0
+
+
+
+# used[0]=1
+# abc(0,0)
+# print(min)
+
+
+#==============================20230214진도 이후 복습=======
+# name=['K','F','C','D','M','G','A']
+
+# arr=[
+#     [0,1,1,1,0,0,0],
+#     [0,0,0,0,1,1,0],
+#     [0,0,0,0,0,0,1],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0],
+# ]
+# path=[]    #[1]정답을 입력받을 path를 만들기
+# def abc(now):  #[3]now에 0을 넣기
+#     global path  #[4]path는 글로벌로 받기
+#     path.append(name[now])   #[5]path에 추가한다 네임의[now]번쨰를
+#     for i in range(len(name)):#[6]반복한다 이름의 길이만큼
+#         if arr[now][i]==1:    #[7]반복해서 1이나오면
+#             abc(i)              #[8]나온 1의값의 위치번호로 now를설정하고 다시호출
+# abc(0) #[2]abc함수 호출
+# print(path)
+#=====================================================
+# name=list(input().split())  # B A C D
+# arr=[[0,0,1,1],
+#      [1,0,0,0],
+#      [0,1,0,1],
+#      [0,0,0,0]]
+
+# path=[]   #[1]정답입력칸만들기
+# used=[0]*4   #[2]방문횟수 체크를 위해 USED만들기
+# def abc(now): #[4]NOW에 0을 처음에 넣음
+#     global path 
+#     path.append(name[now]) #[5]PATH에 처음NAME[NOW]를 추가
+#     for i in range(4):      #[6]4번 반복함
+#         if arr[now][i]==1:  #만약 1이체크되어있으면
+#             if used[i]==0:  #그안에서 만약 USED에 방문기록이 없다면
+#                 used[i]=1   #방문체크를 해줌
+#                 abc(i)      #바로다음은 abc(2)호출
+
+# used[0]=1
+# abc(0)   #[3]ABC호출
+# print(*path)
+#=======================================
+# # 한 지점에서 다른 지점까지 갈 수 있는 경로가 몇가지 인지 출력해 주세요 ( A -> D)
+# name=list(input().split())   # B A C D
+# arr=[
+#     [0,0,1,1],
+#     [1,0,1,0],
+#     [1,0,0,1],
+#     [0,0,0,0]]
+# used=[0]*4
+# answer=0  #경로가 몇가지인지 출력이니까
+# def abc(now):
+#     global answer
+#     if now == 3:
+#         answer+=1
+#     for i in range(4):
+#         if arr[now][i]==1 and used[i]==0:
+#             used[i]=1
+#             abc(i)
+#             used[i]=0
+#
+# used[1]=1
+# abc(1)
+# print(answer)
+
+
+#==========================
+# name=list(input().split())   # B A C D
+# arr=[[0,0,3,14],
+#     [7,0,19,0],
+#     [3,0,0,1],
+#     [0,0,0,0]]
+
+# # A 에서 D 까지 가는 데 최소비용을 구하기
+# used=[0]*4
+# Min=999999999999999999999999
+# sum=0
+# def dfs(now):
+#     global Min,sum
+#     if now==3:
+#         if sum<Min:     # 최소sum 구하기
+#             Min=sum
+#         return
+#     for i in range(4):
+#         if arr[now][i]>0: #이동할 수 있는 곳이라면
+#             if used[i]==0: # 한번도 방문한 적이 없는 곳이라면
+#                 used[i]=1
+#                 sum+=arr[now][i]
+#                 dfs(i)
+#                 used[i]=0
+#                 sum-=arr[now][i]
+
+# used[1]=1
+# dfs(1)     # 시작인덱스1 // sum=0
+# print(Min)
+#===========================================
+# lst=list(map(int,input().split()))
+
+# arr=[[0]*3 for _ in range(2)]
+
+
+
+# for i in range(2):
+#     for j in range(3):
+#         for x in range(6):
+#             arr[i][j]=lst[x]
+# print(arr)
+        
+#==================
+
+# name=['Chloe','Diane','Bob','Amym','Edger']
+# arr=[[0,0,1,0,0],
+#     [0,0,1,0,0],
+#     [0,0,0,1,0],
+#     [0,0,0,0,1],
+#     [0,0,0,0,0]]
+
+# maxv=0
+# for i in range(5):
+#     sum=0
+#     for j in range(5):
+#         if arr[i][j]==1:
+#             sum+=1
+#         if sum>maxv:
+#             maxv=sum
+#=====================================
+# people = ['Amy','Bob','Chloe','Diane','Edger']
+
+# arr = [[0,0,1,0,1],
+#        [1,0,0,0,0],
+#        [0,1,0,0,0],
+#        [0,1,0,0,0],
+#        [0,0,0,1,0]]
+
+# # 여기서  가장 인기가 많은 사람은 누구인지 출력
+# maxV=0
+# for j in range(5):
+#     sum = 0
+#     for i in range(5):
+#         if arr[i][j] == 1:
+#             sum += 1
+#     if maxV < sum:
+#         maxV = sum
+#         pp = people[j]
+# print(pp)
+#=========================
+# n,m=map(int,input().split())
+#65~82
+arr=[[0]*3 for _ in range(6)]
+
+    
+for i in range(2,-1,-1):
+    for j in range(5,-1,-1):
+        for x in range(82,64,-1):
+            arr[j][i]==chr(x)
+print(arr)
