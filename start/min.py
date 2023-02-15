@@ -1296,13 +1296,56 @@
 #         pp = people[j]
 # print(pp)
 #=========================
-# n,m=map(int,input().split())
-#65~82
-arr=[[0]*3 for _ in range(6)]
-
+# # n,m=map(int,input().split())
+# #65~82
+# arr=[[0]*3 for _ in range(6)]
+# for x in range(82,64,-1):
     
-for i in range(2,-1,-1):
-    for j in range(5,-1,-1):
-        for x in range(82,64,-1):
-            arr[j][i]==chr(x)
-print(arr)
+# for i in range(2,-1,-1):
+#     for j in range(5,-1,-1):
+        
+#         arr[j][i]==chr(x)
+# print(arr)
+
+#============================20230215===========================
+arr=[[3,5,9,6],
+     [7,-8,1,6],
+     [-10,2,3,9],
+     [5,1,2,8],
+     [4,7,1,8]]
+cnt=0
+def dfs(now,level,sum):
+     global cnt
+     if level==5:
+          if sum>30:
+               cnt+=1
+          return
+     for i in range(3):
+         direct=[-1,0,1]
+         dy=level
+         dx=now+direct[i]
+         if dx<0 or dx>3: continue
+         dfs(dx,level+1,sum+arr[dy][dx])
+
+for i in range(4):
+     dfs(i,1,arr[0][i])     #now level sum
+print(cnt)
+
+
+
+# arr=[[4,5,2],
+#     [-2,1,6],
+#     [3,9,-4],
+#     [3,5,2]]
+
+# cnt=0
+# def abc(level,sum):
+#     global cnt
+#     if level==4:
+#         if sum>20:    ##
+#             cnt+=1    ##
+#         return
+#     for i in range(3):
+#         abc(level+1,sum+arr[level][i])  ###
+# abc(0,0)
+# print(cnt)
